@@ -1,3 +1,2 @@
-make
-docker build . -t ctf_challenge
-docker run -it --rm -p 419:31337 ctf_challenge
+docker build . -t server
+docker run -it --rm -p 419:31337 server
