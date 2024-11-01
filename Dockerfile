@@ -21,8 +21,8 @@ RUN useradd -s /bin/bash -m ctf
 WORKDIR /home/ctf
 
 # copy files
-COPY ./public/* /home/ctf/
-COPY ./private/* /home/ctf/
+COPY ./handout/* /home/ctf/
+COPY ./infra/* /home/ctf/
 RUN chown ctf -R /home/ctf/ && unzip tasteless-shores.pck.zip 
 
 USER ctf 
