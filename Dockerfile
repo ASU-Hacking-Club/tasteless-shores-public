@@ -1,24 +1,30 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get install -y \
-    lib32z1 xinetd socat
+    libxcursor1 \
+    libxinerama1 \
+    libxrandr2 \
+    libxi6 \
+    libxcursor-dev \
+    libxinerama-dev \
+    libxrandr-dev \
+    libxi-dev \
+    libgl1 \
+    libgl1-mesa-glx \
+    libglu1-mesa \
+    xvfb \ 
+    unzip 
 
+# setup the user
 RUN useradd -s /bin/bash -m ctf
-RUN useradd -s /bin/bash -m member_bot
-
 WORKDIR /home/ctf
-COPY ./utils/ctf.xinetd /etc/xinetd.d/ctf
-COPY ./utils/start.sh /start.sh
-RUN echo "Blocked by ctf_xinetd" > /etc/banner_fail
 
-
+# copy files
 COPY ./public/* /home/ctf/
-RUN chown -R root:ctf /home/ctf && \
-    chmod -R 750 /home/ctf && \
-    chmod u+s /home/ctf/server
+COPY ./private/* /home/ctf/
+RUN chown ctf -R /home/ctf/ && unzip tasteless-shores.pck.zip 
 
-USER ctf
-
-CMD ["/start.sh"]
+USER ctf 
 
 EXPOSE 31337
