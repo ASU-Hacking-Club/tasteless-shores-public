@@ -1,2 +1,2 @@
-docker build . -t server
-docker run -it --rm -p 29:31337 server
+docker build . -t tasteless-shores
+docker run -it --rm -p 28:31337 tasteless-shores

@@ -28,3 +28,4 @@ RUN chown ctf -R /home/ctf/ && unzip tasteless-shores.pck.zip
 USER ctf 
 
 EXPOSE 31337
+ENTRYPOINT ["/home/ctf/start_server.sh"]
