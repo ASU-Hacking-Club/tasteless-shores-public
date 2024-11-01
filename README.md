@@ -11,6 +11,7 @@ Clone this repo with all it's LFS objects (the big files):
 git clone https://github.com/ASU-Hacking-Club/tasteless-shores-public.git
 cd tasteless-shores-public 
 git lfs fetch --all
+git lfs checkout 
 ```
 
 You now have all files!
