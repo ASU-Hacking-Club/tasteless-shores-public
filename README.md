@@ -13,6 +13,8 @@ cd tasteless-shores-public
 git lfs fetch --all
 git lfs checkout 
 ```
+NOTE: due to git-lfs limits, we also have a copy of the .pck file hosted on [dropbox](https://www.dropbox.com/scl/fo/x5fet9ev40adv25zi9ev4/AIX0zk_hHyjYbymYkSorKaE?rlkey=zlul554ebbl1n5iplepy7cv88&st=f3vdh0z0&dl=0)!
+
 
 You now have all files!
 
